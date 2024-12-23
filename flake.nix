@@ -160,12 +160,12 @@
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
-        malenia = createNixOS "x86_64-linux" "malenia" "hjaltebogehave" "Hjalte Bøgehave" "hjalte@bogehave.com";
-        miquella = createNixOS "aarch64-linux" "miquella" "hjaltebogehave" "Hjalte Bøgehave" "hjalte@bogehave.com";
+        malenia = createNixOS "x86_64-linux" "malenia" "hjalte" "Hjalte Bøgehave" "hjalte@bogehave.com";
+        miquella = createNixOS "aarch64-linux" "miquella" "hjalte" "Hjalte Bøgehave" "hjalte@bogehave.com";
       };
 
       darwinConfigurations = {
-        solaire = createDarwin "solaire" "hjaltebogehave" "Hjalte Bøgehave" "hjalte@bogehave.com";
+        solaire = createDarwin "solaire" "hjalte" "Hjalte Bøgehave" "hjalte@bogehave.com";
       };
 
       darwinPackages = self.darwinConfigurations.${outputs.networking.hostName}.pkgs;

@@ -7,49 +7,45 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      cleanup = "uninstall";
+      cleanup = "zap";
     };
 
     brews = [
-      "lua"
-      "ripgrep"
-      "sketchybar"
-      "borders"
-      "libpcap"
-      "hcxtools"
-      "xz"
-      "ykman"
-      "tree"
-      "trash-cli"
-      "starship"
+      "lua"      # Programming language designed for embedded use
+      "ripgrep"  # Fast line-oriented search tool (alternative to grep)
+      "sketchybar" # Highly customizable macOS status bar replacement
+      "borders"  # Window border highlighter for macOS
+      "libpcap"  # Portable C/C++ library for network traffic capture
+      "hcxtools" # Utils for capturing wlan traffic and conversion
+      "xz"       # Data compression utilities
+      "ykman"    # YubiKey Manager CLI tool
+      "tree"     # Directory listing tool showing tree structure
+      "trash-cli" # CLI interface to macOS trash
+      "starship" # Cross-shell customizable prompt
+      "awscli"   # Official Amazon AWS command-line interface
+      "gh"       # GitHub CLI tool
     ];
 
     taps = [
       "nikitabobko/tap"
       "felixkratz/formulae"
+      "dimentium/autoraise"
     ];
 
     casks = [
       # Development Tools
-      { name = "android-studio"; greedy = true; } # IDE for Android development
-      { name = "android-platform-tools"; greedy = true; } # Android SDK platform tools
       { name = "cursor"; greedy = true; } # AI-first code editor
       { name = "docker"; greedy = true; } # Container platform
-      { name = "dotnet-sdk"; greedy = true; } # .NET development SDK
-      { name = "flutter"; greedy = true; } # Google's UI toolkit
-      { name = "gcc-arm-embedded"; greedy = true; } # ARM GCC toolchain
-      { name = "ghidra"; greedy = true; } # Software reverse engineering tool
-      { name = "hopper-disassembler"; greedy = true; } # Reverse engineering tool
       { name = "jetbrains-toolbox"; greedy = true; } # JetBrains IDE manager
       { name = "kicad"; greedy = true; } # Electronics design automation suite
-      { name = "machoview"; greedy = true; } # Mach-O file viewer
       { name = "postman"; greedy = true; } # API development platform
       { name = "visual-studio-code"; greedy = true; } # Code editor
-      { name = "xcodes"; greedy = true; } # Xcode versions manager
-      { name = "zed"; greedy = true; } # High-performance code editor
+      { name = "datagrip"; greedy = true; } # Jetbrains DataGrip
+      { name = "pycharm"; greedy = true; } # Jetbrains PyCharm
+      { name = "windsurf"; greedy = true; } # Agentic IDE powered by AI Flow paradigm
+
 
       # Terminal Emulators
-      { name = "alacritty"; greedy = true; } # GPU-accelerated terminal
       { name = "kitty"; greedy = true; } # Fast terminal emulator
       { name = "warp"; greedy = true; } # Rust-based terminal
 
@@ -63,26 +59,20 @@
       { name = "sf-symbols"; greedy = true; } # Apple system symbols
 
       # Productivity & Organization
-      { name = "alfred"; greedy = true; } # Productivity app launcher
       { name = "hiddenbar"; greedy = true; } # Menu bar icon manager
-      { name = "linear-linear"; greedy = true; } # Project management tool
       { name = "meetingbar"; greedy = true; } # Calendar meetings in menu bar
       { name = "notion"; greedy = true; } # All-in-one workspace
       { name = "obsidian"; greedy = true; } # Knowledge base markdown editor
-      { name = "raycast"; greedy = true; } # Productivity launcher
-      { name = "time-out"; greedy = true; } # Break reminder tool
 
       # Communication & Collaboration
       { name = "discord"; greedy = true; } # Chat and community platform
       { name = "microsoft-teams"; greedy = true; } # Business communication
-      { name = "protonmail-bridge"; greedy = true; } # ProtonMail integration
       { name = "slack"; greedy = true; } # Team communication
       { name = "whatsapp"; greedy = true; } # Messaging app
       { name = "zoom"; greedy = true; } # Video conferencing
 
       # Security & Privacy
       { name = "bitwarden"; greedy = true; } # Password manager
-      { name = "lulu"; greedy = true; } # Network firewall
       { name = "protonvpn"; greedy = true; } # Secure VPN service
       { name = "tunnelblick"; greedy = true; } # OpenVPN client
       { name = "wireshark"; greedy = true; } # Network protocol analyzer
@@ -90,7 +80,6 @@
       # System Utilities
       { name = "aerospace"; greedy = true; } # Window manager
       { name = "aldente"; greedy = true; } # Battery charge limiter
-      { name = "anydesk"; greedy = true; } # Remote desktop
       { name = "disk-inventory-x"; greedy = true; } # Disk space analyzer
       { name = "displaylink"; greedy = true; } # Display connectivity
       { name = "eul"; greedy = true; } # System monitor
@@ -106,27 +95,21 @@
 
       # Web Browsers
       { name = "arc"; greedy = true; } # Chromium-based browser
-      { name = "brave-browser"; greedy = true; } # Privacy-focused browser
-      { name = "zen-browser"; greedy = true; } # Minimal browser
 
       # Media & Entertainment
       { name = "calibre"; greedy = true; } # E-book manager
-      { name = "obs"; greedy = true; } # Streaming/recording software
       { name = "pika"; greedy = true; } # Color picker tool
-      { name = "rekordbox"; greedy = true; } # DJ software
       { name = "spotify"; greedy = true; } # Music streaming
       { name = "vlc"; greedy = true; } # Media player
 
       # 3D Printing & Making
       { name = "bambu-studio"; greedy = true; } # 3D printer slicer
-      { name = "prusaslicer"; greedy = true; } # 3D printer slicer
       { name = "raspberry-pi-imager"; greedy = true; } # RPi OS installer
 
       # Development Environments
       { name = "miniconda"; greedy = true; } # Python distribution
       { name = "r"; greedy = true; } # Statistical computing
       { name = "rstudio"; greedy = true; } # R IDE
-      { name = "temurin"; greedy = true; } # OpenJDK distribution
 
       # Documentation & Learning
       { name = "font-sf-mono"; greedy = true; } # Apple's monospace font
@@ -150,14 +133,20 @@
       # Gaming & Game Development
       { name = "godot"; greedy = true; } # Game engine
 
-      # Input Methods
-      { name = "eurkey"; greedy = true; } # European keyboard layout
-
       # Other
-      { name = "legcord"; greedy = true; } # Discord rich presence
-      { name = "psst"; greedy = true; } # Spotify client
-      { name = "thunderbird@beta"; greedy = true; } # Email client
       { name = "vial"; greedy = true; } # Keyboard configurator
+      { name = "spotify"; greedy = true; } # Spotify
+      { name = "microsoft-excel"; greedy = true; } # Excel
+      { name = "swiftbar"; greedy = true; } # AI-first code editor
+      { name = "autoraiseapp"; greedy = true; } # Auto Raise
     ];
+    masApps = {
+      amphetamine = 937984704;
+      kindle = 302584613;
+      tailscale = 1475387142;
+
+      # useful for debugging macos key codes
+      #key-codes = 414568915;
+    };
   };
 }

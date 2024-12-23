@@ -7,6 +7,8 @@ after-startup-command = [
 
 key-mapping.preset = 'qwerty'
 
+#on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
@@ -27,12 +29,12 @@ on-focus-changed = [
 ]
 
 [gaps]
-outer.top =        [{ monitor."built-in.*" = 12 }, 48]
-outer.left =       12
-outer.bottom =     12
-outer.right =      12
-inner.horizontal = 12
-inner.vertical =   12
+outer.top =        [{ monitor."built-in.*" = 0 }, 48]
+outer.left =       0
+outer.bottom =     0
+outer.right =      0
+inner.horizontal = 0
+inner.vertical =   0
 
 [mode.main.binding]
 cmd-h = [] # Disable "hide application"
@@ -55,21 +57,46 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-alt-b = 'workspace B'
-alt-c = 'workspace C'
-alt-e = 'workspace E'
-alt-f = 'workspace F'
-alt-t = 'workspace T'
-alt-x = 'workspace X'
+alt-1 = 'workspace Home'
+alt-2 = 'workspace Home2'
+alt-3 = 'workspace Home3'
+alt-4 = 'workspace Home4'
+alt-5 = 'workspace Home5'
+alt-6 = 'workspace Home6'
+alt-7 = 'workspace Home7'
+alt-8 = 'workspace Home8'
+alt-9 = 'workspace Home9'
+alt-b = 'workspace Browser'
+alt-m = 'workspace Music'
+alt-c = 'workspace Code'
+alt-o = 'workspace Obsidian'
+alt-d = 'workspace DataGrip'
+alt-t = 'workspace Terminal'
 
-alt-shift-b = 'move-node-to-workspace B'
-alt-shift-c = 'move-node-to-workspace C'
-alt-shift-e = 'move-node-to-workspace E'
-alt-shift-f = 'move-node-to-workspace F'
-alt-shift-t = 'move-node-to-workspace T'
-alt-shift-x = 'move-node-to-workspace X'
+shift-ctrl-t = ["exec-and-forget open -n /Applications/Kitty.app"]
+shift-ctrl-c = ["exec-and-forget open -n /Applications/Windsail.app"]
+shift-ctrl-d = ["exec-and-forget open -n /Applications/DataGrip.app"]
+shift-ctrl-m = ["exec-and-forget open -n /Applications/Spotify.app"]
+shift-ctrl-o = ["exec-and-forget open -n /Applications/Obsidian.app"]
 
-alt-m = 'exec-and-forget sketchybar --trigger aerospace_switch'
+
+alt-shift-1 = 'move-node-to-workspace Home'
+alt-shift-2 = 'move-node-to-workspace Home2'
+alt-shift-3 = 'move-node-to-workspace Home3'
+alt-shift-4 = 'move-node-to-workspace Home4'
+alt-shift-5 = 'move-node-to-workspace Home5'
+alt-shift-6 = 'move-node-to-workspace Home6'
+alt-shift-7 = 'move-node-to-workspace Home7'
+alt-shift-8 = 'move-node-to-workspace Home8'
+alt-shift-9 = 'move-node-to-workspace Home9'
+alt-shift-b = 'move-node-to-workspace Browser'
+alt-shift-c = 'move-node-to-workspace Code'
+alt-shift-t = 'move-node-to-workspace Terminal'
+alt-shift-o = 'move-node-to-workspace Obsidian'
+alt-shift-d = 'move-node-to-workspace DataGrip'
+alt-shift-m = 'move-node-to-workspace Music'
+
+alt-n = 'exec-and-forget sketchybar --trigger aerospace_switch'
 
 [mode.service.binding]
 esc = [
@@ -96,37 +123,58 @@ equal = 'resize smart +50'
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace T']
+run = ['move-node-to-workspace Terminal']
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
-check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace B']
+if.app-id = 'dev.warp.Warp-Stable'
+run = ['move-node-to-workspace Terminal']
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
-check-further-callbacks = true
-if.window-title-regex-substring = 'picture-in-picture'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.google.android.studio'
-check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace C'] 
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace Browser']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace F']
+run = ['layout tiling']
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.thunderbird'
+if.app-id = 'com.bitwarden.desktop'
 check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace E']
+run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.jpochyla.psst'
+if.app-id = 'com.spotify.client'
 check-further-callbacks = true
-run = ['layout tiling', 'move-node-to-workspace E']
+run = ['layout tiling', 'move-node-to-workspace Music']
 
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace DataGrip']
+
+[[on-window-detected]]
+if.app-id = 'com.exafunction.windsurf'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace Code']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace Code']
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.pycharm'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace Code']
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace Code']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+check-further-callbacks = true
+run = ['layout tiling', 'move-node-to-workspace Obsidian']
