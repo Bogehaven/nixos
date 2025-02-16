@@ -5,46 +5,37 @@ export ZSH="$HOME/.config/zsh"
 export LANG=en_US.UTF-8
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-export BUN_INSTALL="$HOME/.bun"
-export SDKMAN_DIR="$HOME/.sdkman"
-export NVM_DIR="$HOME/.nvm"
-export AE_DEPLOYMENT_ENV="debug"
-export GOKU_EDN_CONFIG_FILE="$HOME/.config/goku/karabiner.edn"
 
 export PATH="$PATH:/run/current-system/sw/bin"
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$HOME/.flutter/bin"
 export PATH="$PATH:$BUN_INSTALL/bin"
 export PATH="$PATH:$HOME/neovim/bin"
-export PATH="$PATH:/opt/homebrew/opt/ruby/bin"
 
 # Antigen
-source "$ZSH/plugins/antigen.zsh"
+#source "$ZSH/plugins/antigen.zsh"
 
-antigen bundle git
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
+#antigen bundle git
+#antigen bundle zsh-users/zsh-autosuggestions
+#antigen bundle zsh-users/zsh-completions
+#antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen apply
+#antigen apply
 
 # Theming
-eval "$(oh-my-posh init zsh --config $ZSH/themes/tokyonight.omp.toml)"
+#eval "$(oh-my-posh init zsh --config $ZSH/themes/tokyonight.omp.toml)"
 
 # History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+#HISTSIZE=5000
+#HISTFILE=~/.zsh_history
+#SAVEHIST=$HISTSIZE
+#HISTDUP=erase
+#setopt appendhistory
+#setopt sharehistory
+#setopt hist_ignore_space
+#setopt hist_ignore_all_dups
+#setopt hist_save_no_dups
+#setopt hist_ignore_dups
+#setopt hist_find_no_dups
 
 # BAT
 export BAT_THEME=tokyonight_night
@@ -103,16 +94,14 @@ _fzf_comprun() {
   esac
 }
 
-source <(fzf --zsh)
+#source <(fzf --zsh)
 
 # Aliases
-alias ls="eza --icons=always"
+#alias ls="eza --icons=always"
 
 alias vim="nvim"
 
 alias gst="lazygit"
-
-alias ls="eza --icons=always"
 
 alias cnix="nvim /etc/nixos"
 alias cdnix="cd /etc/nixos"
@@ -120,19 +109,19 @@ alias cdnix="cd /etc/nixos"
 alias cn="vim ~/.config/nvim"
 alias cz="vim ~/.config/zsh"
 
-alias visudo="sudo -E visudo"
+#alias visudo="sudo -E visudo"
 
 alias drs="(cd /etc/nixos && darwin-rebuild switch --flake .#solaire)"
 
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+#[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # RBENV
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # SDKMan
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -13,17 +13,17 @@
     python3   # Python programming language interpreter
     nodejs_22 # Node.js JavaScript runtime
     cargo     # Rust package manager and build tool
+    cmake     # Cross-Platform Makefile generator
 
     # Language Servers and Development Tools
     nil                      # Nix language server
-    lua-language-server      # Language server for Lua
-    bash-language-server     # Language server for Bash
-    yaml-language-server     # Language server for YAML
-    typescript-language-server # Language server for TypeScript/JavaScript
     nixfmt-rfc-style        # Nix code formatter
     prettierd               # Prettier daemon for code formatting
     kdoctor                 # KDE environment doctor/diagnostics
     rbenv                   # Ruby version manager
+
+    argparse
+    python313Packages.fontforge
 
     # CLI Utilities
     wget      # File download utility

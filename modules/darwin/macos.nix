@@ -6,14 +6,6 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   system = {
-    # activationScripts are executed every time you boot the system
-    # or run `nixos-rebuild` / `darwin-rebuild`.
-    activationScripts.postUserActivation.text = ''
-      # activateSettings -u will reload the settings from the database and apply
-      # them to the current session, so we do not need to logout and login again
-      # to make the changes take effect.
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    '';
     # Keyboard settings
     keyboard = {
       enableKeyMapping = true;
@@ -23,7 +15,7 @@
     defaults = {
       # clock
       menuExtraClock.Show24Hour = true;
-      menuExtraClock.ShowSeconds = true;
+      menuExtraClock.ShowSeconds = false;
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/trackpad.nix
       trackpad = {
@@ -44,19 +36,20 @@
         "com.apple.mouse.tapBehavior" = 1;      # Enable tap to click
         "com.apple.sound.beep.volume" = 0.0;    # Disable system beep
         "com.apple.sound.beep.feedback" = 0;
+        _HIHideMenuBar = false;
       };
 
       # Dock configuration
       dock = {
         appswitcher-all-displays = true;        # Show app switcher on all displays
-        autohide = true;                        # Automatically hide and show the Dock
+        autohide = false;                        # Automatically hide and show the Dock
         autohide-delay = 0.0;                   # Remove delay for showing Dock
         autohide-time-modifier = 0.15;          # Speed up Dock show/hide animation
         orientation = "bottom";                  # Place Dock at the bottom
-        tilesize = 32;                          # Set Dock icon size
+        tilesize = 22;                          # Set Dock icon size
         largesize = 96;
         launchanim = false;                     # Disable launch animation
-        magnification = true;                   # Enable magnification
+        magnification = false;                   # Enable magnification
         minimize-to-application = true;         # Minimize windows into application icon
         show-process-indicators = true;         # Show indicators for open applications
         show-recents = false;                   # Don't show recent applications
@@ -68,7 +61,9 @@
           "/Applications/Arc.app"
           "/System/Applications/Mail.app"
           "/Applications/Spotify.app"
-          "/Applications/Windsurf.app"
+          "/Applications/Cursor.app"
+          "/Applications/ChatGPT.app"
+          "/Applications/Claude.app"
           "/Applications/Obsidian.app"
         ];
         expose-animation-duration = 0.2;        # Mission Control animation speed
