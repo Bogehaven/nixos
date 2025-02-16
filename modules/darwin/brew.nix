@@ -28,6 +28,7 @@ in
       "awscli"   # Official Amazon AWS command-line interface
       "gh"       # GitHub CLI tool
       "autoraise" # Auto Raise
+      "zoxide"   # Zoxide
 
       "awscli"   # AWS CLI tool
       "minio-mc" # CLI tool for managing Amazon S3
@@ -41,7 +42,7 @@ in
     
 
     ] ++ (if windowManager == "yabai" then [
-      "skhd" # Simple hotkey daemon
+      "koekeishiya/formulae/skhd" # Simple hotkey daemon
       "koekeishiya/formulae/yabai" # Tiling window manager
     ] else []);
 

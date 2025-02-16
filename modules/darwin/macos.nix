@@ -1,11 +1,16 @@
 # Configuration for macOS-specific settings
-{ username, ... }:
+{ username, config, pkgs, ... }:
 
 {
   # Enable Touch ID authentication for sudo
   security.pam.enableSudoTouchIdAuth = true;
 
   system = {
+    activationScripts.extraActivation.text = ''
+      # Airport Bluetooth Coexistence Management
+      defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
+    '';
+
     # Keyboard settings
     keyboard = {
       enableKeyMapping = true;

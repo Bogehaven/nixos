@@ -2,12 +2,13 @@
 
 {
   imports = [
-    ./tmux
     ./aerospace
     ./sketchybar
     ./helix
-    ./kanata
     ./ghostty
+    ./borders
+    ./svim
+    ./starship
   ];
 }
 

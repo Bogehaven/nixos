@@ -12,30 +12,30 @@ export PATH="$PATH:$BUN_INSTALL/bin"
 export PATH="$PATH:$HOME/neovim/bin"
 
 # Antigen
-#source "$ZSH/plugins/antigen.zsh"
+source "$ZSH/plugins/antigen.zsh"
 
-#antigen bundle git
-#antigen bundle zsh-users/zsh-autosuggestions
-#antigen bundle zsh-users/zsh-completions
-#antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-#antigen apply
+antigen apply
 
 # Theming
-#eval "$(oh-my-posh init zsh --config $ZSH/themes/tokyonight.omp.toml)"
+eval "$(oh-my-posh init zsh --config $ZSH/themes/tokyonight.omp.toml)"
 
 # History
-#HISTSIZE=5000
-#HISTFILE=~/.zsh_history
-#SAVEHIST=$HISTSIZE
-#HISTDUP=erase
-#setopt appendhistory
-#setopt sharehistory
-#setopt hist_ignore_space
-#setopt hist_ignore_all_dups
-#setopt hist_save_no_dups
-#setopt hist_ignore_dups
-#setopt hist_find_no_dups
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # BAT
 export BAT_THEME=tokyonight_night
@@ -94,11 +94,14 @@ _fzf_comprun() {
   esac
 }
 
-#source <(fzf --zsh)
+source <(fzf --zsh)
+
+eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Aliases
-#alias ls="eza --icons=always"
-
+alias ls="eza --icons=always"
+alias nano="hx"
 alias vim="nvim"
 
 alias gst="lazygit"
